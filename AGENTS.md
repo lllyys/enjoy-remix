@@ -75,6 +75,7 @@ Auto-loaded into every session as project context:
 | `10-tdd.md` | Vitest-driven TDD loop (RED→GREEN→REFACTOR), what to test vs. skip |
 | `20-logging-and-docs.md` | electron-log usage and dev-docs update policy |
 | `22-comment-maintenance.md` | Keep code comments in sync with the code they describe |
+| `47-feature-workflow.md` | Binding 6-gate feature workflow: Plan → Audit → TDD → Audit → Verify → Merge |
 | `48-parallel-execution.md` | When/how to parallelize agents and worktrees; one writer per area |
 | `49-background-shells.md` | Background-shell discipline — wait on identity (PID/sentinel), never on a name match |
 
@@ -86,6 +87,40 @@ thresholds at `0` and `blockCommitWithoutFreshGate: false`, so nothing fails on
 coverage today. The zeros are a deliberate floor: as real tests land, ratchet
 the thresholds up rather than letting them drift. Treat guardian output as a
 signal, not a gate.
+
+## Task workflow & GitHub issues
+
+Three Markdown trackers under `docs/`, each with one job — never mix bugs and
+features:
+
+| Tracker | Job |
+|---------|-----|
+| `docs/tasks.md` | Inbox: raw, unclassified incoming work waiting to be triaged |
+| `docs/bugs.md` | Confirmed defects only — never features |
+| `docs/features.md` | Proposed/planned enhancements only — never bugs |
+
+- **Triage is classification-only.** `/triage` reads `docs/tasks.md` and sorts
+  each item into `docs/bugs.md` or `docs/features.md` (and tags the code area —
+  renderer / preload-IPC / main / db / ai-commands / api+cables / build-config).
+  It does not plan, fix, or estimate.
+- **GH issue mirroring.** A **PLANNED** feature or a **new bug** gets a GitHub
+  issue. Mirroring is **mechanical and idempotent on `GH: #N`** — the issue
+  number is written back into the tracker line, so a second pass is a no-op.
+  An item line carrying **`Mirror: no`** opts out and is never mirrored.
+- **Advisory reminder.** `.claude/hooks/check_gh_issue_mirror.sh` (wired as a
+  non-blocking `PreToolUse` hook on Edit/Write/MultiEdit) just *reminds* you when
+  a PLANNED feature or bug lacks a `GH: #N` and isn't `Mirror: no`. It never
+  blocks the edit.
+- **PRs reference the issue.** Put `Refs #N` in the PR body (or commit) so the
+  work links back to its mirrored issue.
+- **Commands.** Use `/file-bug` to append a bug to `docs/bugs.md`, `/file-feature`
+  to append a feature to `docs/features.md`, and `/triage` to drain
+  `docs/tasks.md` into the two trackers.
+- **Fork caveat.** The working remote is the fork `lllyys/everyone-can-use-english`,
+  and **forks often have Issues disabled** (this one currently is). If `gh issue`
+  calls fail because Issues are off, record `GH: n/a (issues disabled)` in the
+  row's Notes (the mirror reminder treats that as satisfied) and move on — don't
+  block work on a missing issue.
 
 ## Electron gotchas
 

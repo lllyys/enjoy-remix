@@ -22,6 +22,10 @@ that apply to every change in this repo.
   with `pathToEnjoyUrl` / `enjoyUrlToPath` (`src/main/utils.ts`). Migrations are
   timestamped under `src/main/db/migrations/` — create them with
   `yarn enjoy:create-migration` and always write a real `down`.
+- **Task workflow:** track work in `docs/tasks.md` (inbox), `docs/bugs.md`, and
+  `docs/features.md`; follow the binding 6-gate feature workflow in
+  `.claude/rules/47-feature-workflow.md`. See `AGENTS.md` for triage and GH-issue
+  mirroring details.
 
 ## Claude-specific notes
 
