@@ -75,7 +75,7 @@ gh issue create --title "<title>" --label "<labels>" --body "<body>"
 Capture the issue URL from stdout. Extract the issue number (last path segment of the URL).
 
 **Failure modes**:
-- **Issues disabled (fork caveat)**: this repo is the FORK `lllyys/everyone-can-use-english`, and forks often have Issues DISABLED (this one currently is). If `gh` reports something like `Issues are disabled for this repository` / `GraphQL: ... has issues disabled`, then **stamp `GH: n/a (issues disabled)` into the row's Notes** (Phase 3 edit mechanics) so the mirror reminder treats the row as satisfied, and print:
+- **Issues disabled (fork caveat)**: this repo is the FORK `lllyys/everyone-can-use-english`, and forks often have Issues DISABLED. If `gh` reports something like `Issues are disabled for this repository` / `GraphQL: ... has issues disabled`, then **stamp `GH: n/a (issues disabled)` into the row's Notes** (Phase 3 edit mechanics) so the mirror reminder treats the row as satisfied, and print:
   `GitHub Issues are DISABLED on this fork — recorded "GH: n/a (issues disabled)" on bug #<id>. To mirror for real, enable Issues (Settings → General → Features → Issues: https://github.com/lllyys/everyone-can-use-english/settings) and re-run /file-bug <id>.`
   Then STOP.
 - Network failure → re-run once after 3s; if still failing, print the URL (if any) + error and STOP.

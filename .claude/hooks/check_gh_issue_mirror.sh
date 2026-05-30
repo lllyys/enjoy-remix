@@ -17,9 +17,8 @@
 # bottom to `exit 2`. A PreToolUse hook that exits 2 cancels the tool
 # call and feeds STDERR back to the model as the block reason. Only do
 # this if you want a hard gate — note that GitHub Issues are often
-# DISABLED on forks (this repo is the fork lllyys/everyone-can-use-english,
-# which currently has Issues off), so a hard gate can wedge legitimate
-# edits. Advisory is the safe default.
+# DISABLED on forks, so a hard gate can wedge legitimate edits.
+# Advisory is the safe default.
 # ─────────────────────────────────────────────────────────────────────────
 #
 # Mirror-required state:
@@ -248,10 +247,9 @@ fi
     echo
     echo "If the row is intentionally local-only, add \`Mirror: no\` to its Notes."
     echo
-    echo "Caveat: this repo is the FORK lllyys/everyone-can-use-english and forks"
-    echo "often have Issues DISABLED (this one currently is) — if /file-${KIND}"
-    echo "reports that, it records \`GH: n/a (issues disabled)\` on the row (which"
-    echo "satisfies this reminder); enable Issues in repo settings to mirror for real."
+    echo "Caveat: forks can have Issues DISABLED — if /file-${KIND} reports that,"
+    echo "it records \`GH: n/a (issues disabled)\` on the row, which satisfies this"
+    echo "reminder."
 } >&2
 
 # ADVISORY: never block. Flip to `exit 2` to make this a hard gate

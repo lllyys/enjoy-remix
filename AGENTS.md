@@ -117,7 +117,7 @@ features:
   to append a feature to `docs/features.md`, and `/triage` to drain
   `docs/tasks.md` into the two trackers.
 - **Fork caveat.** The working remote is the fork `lllyys/everyone-can-use-english`,
-  and **forks often have Issues disabled** (this one currently is). If `gh issue`
+  and **forks can have Issues disabled**. If `gh issue`
   calls fail because Issues are off, record `GH: n/a (issues disabled)` in the
   row's Notes (the mirror reminder treats that as satisfied) and move on — don't
   block work on a missing issue.
