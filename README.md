@@ -6,6 +6,11 @@
 AI 是当今世界上最好的外语老师，Enjoy 做 AI 最好的助教。
 </h3>
 
+> [!NOTE]
+> **这是一个修改版（Modified Fork）。** 本仓库（`enjoy-remix`）基于上游开源项目 [ZuodaoTech/everyone-can-use-english](https://github.com/ZuodaoTech/everyone-can-use-english) 修改而来，加入了本地的开发工具与改动，**并非官方原版**。如需原版请前往上游仓库。
+>
+> **This is a modified version.** This repository (`enjoy-remix`) is based on, and modifies, the upstream open-source project [ZuodaoTech/everyone-can-use-english](https://github.com/ZuodaoTech/everyone-can-use-english) — it adds local developer tooling and changes. It is **not** the official original; for that, see the upstream repo. Distributed under the original MIT [LICENSE](./LICENSE).
+
 [![Deploy 1000h website](https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/deploy-1000h.yml/badge.svg)](https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/deploy-1000h.yml)
 [![Test Enjoy App](https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/test-enjoy-app.yml/badge.svg)](https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/test-enjoy-app.yml)
 [![Release Enjoy App](https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/release-enjoy-app.yml/badge.svg)](https://github.com/ZuodaoTech/everyone-can-use-english/actions/workflows/release-enjoy-app.yml)
