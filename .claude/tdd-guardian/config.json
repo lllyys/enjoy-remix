@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "testCommand": "yarn workspace enjoy test:unit",
+  "coverageCommand": "yarn workspace enjoy coverage",
+  "coverageSummaryPath": "enjoy/coverage/coverage-summary.json",
+  "coverageThresholds": {
+    "lines": 0,
+    "functions": 0,
+    "branches": 0,
+    "statements": 0
+  },
+  "blockCommitWithoutFreshGate": false,
+  "enforceOnTaskCompleted": false,
+  "requireMutation": false,
+  "mutationCommand": "",
+  "preflightCommand": "",
+  "gateFreshnessMinutes": 120,
+  "bypassEnv": "TDD_GUARD_BYPASS"
+}

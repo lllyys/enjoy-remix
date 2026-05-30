@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": []
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/check_gh_issue_mirror.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
