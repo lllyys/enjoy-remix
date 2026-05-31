@@ -45,7 +45,7 @@ Use the Enjoy code areas for the Area column: `renderer` (React pages/components
 
 ## GitHub mirroring
 
-> Note: this repo is the **fork** `lllyys/everyone-can-use-english`, and forks frequently have **Issues DISABLED**. If `gh issue create` fails because Issues are off, record `GH: n/a (issues disabled)` in Notes instead of a number — the row still tracks the bug; the mirror is simply unavailable.
+> Note: this repo is the **fork** `lllyys/enjoy-remix`, and forks can have **Issues disabled** (currently ENABLED on `lllyys/enjoy-remix`). If `gh issue create` fails because Issues are off, record `GH: n/a (issues disabled)` in Notes instead of a number — the row still tracks the bug; the mirror is simply unavailable.
 
 - **On creating a new row**: file a GitHub issue with `gh issue create` (title = bug title, body = repro/expected/actual + area + severity). Write the returned number back as `GH: #N` in Notes. **Idempotent on `GH: #N`** — never file twice for the same row. Use `/file-bug <id>`.
 - **Opt out**: a row carrying `Mirror: no` in Notes is intentionally excluded from GH mirroring; the agent must never file an issue for it. The advisory hook treats `Mirror: no` and `GH: n/a` as satisfied.

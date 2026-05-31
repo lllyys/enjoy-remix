@@ -25,7 +25,7 @@ $ARGUMENTS
 2. **`gh` auth check**: run `gh auth status`. If unauthenticated → print
    `gh CLI is not authenticated. Run \`gh auth login\` first.` and STOP.
 
-3. **Repo check**: run `gh repo view --json nameWithOwner -q .nameWithOwner` from inside the project. If it errors → print `Not inside a GitHub repo. \`gh repo set-default lllyys/everyone-can-use-english\` may help.` and STOP.
+3. **Repo check**: run `gh repo view --json nameWithOwner -q .nameWithOwner` from inside the project. If it errors → print `Not inside a GitHub repo. \`gh repo set-default lllyys/enjoy-remix\` may help.` and STOP.
 
 4. **Row lookup**: `grep -n "^| *<id> *|" docs/bugs.md | head -1`. If empty → print `Bug #<id> not found in docs/bugs.md` and STOP.
 
@@ -75,8 +75,8 @@ gh issue create --title "<title>" --label "<labels>" --body "<body>"
 Capture the issue URL from stdout. Extract the issue number (last path segment of the URL).
 
 **Failure modes**:
-- **Issues disabled (fork caveat)**: this repo is the FORK `lllyys/everyone-can-use-english`, and forks often have Issues DISABLED. If `gh` reports something like `Issues are disabled for this repository` / `GraphQL: ... has issues disabled`, then **stamp `GH: n/a (issues disabled)` into the row's Notes** (Phase 3 edit mechanics) so the mirror reminder treats the row as satisfied, and print:
-  `GitHub Issues are DISABLED on this fork — recorded "GH: n/a (issues disabled)" on bug #<id>. To mirror for real, enable Issues (Settings → General → Features → Issues: https://github.com/lllyys/everyone-can-use-english/settings) and re-run /file-bug <id>.`
+- **Issues disabled (fork caveat)**: this repo is the FORK `lllyys/enjoy-remix`, and forks can have Issues disabled (currently ENABLED on `lllyys/enjoy-remix`). If `gh` reports something like `Issues are disabled for this repository` / `GraphQL: ... has issues disabled`, then **stamp `GH: n/a (issues disabled)` into the row's Notes** (Phase 3 edit mechanics) so the mirror reminder treats the row as satisfied, and print:
+  `GitHub Issues are DISABLED on this fork — recorded "GH: n/a (issues disabled)" on bug #<id>. To mirror for real, enable Issues (Settings → General → Features → Issues: https://github.com/lllyys/enjoy-remix/settings) and re-run /file-bug <id>.`
   Then STOP.
 - Network failure → re-run once after 3s; if still failing, print the URL (if any) + error and STOP.
 - Rate limit → print `gh API rate-limited. Try again later.` and STOP.
