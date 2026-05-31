@@ -93,7 +93,7 @@ Triage does **not** open GitHub issues. After recording, the row is mirror-eligi
 - Bug → `/file-bug <id>` (labels `bug` + severity).
 - Feature (once promoted from `TODO` to `PLANNED`) → `/file-feature <id>` (label `enhancement`).
 
-Skip mirroring entirely for DUPLICATE, WONT DO, and NEEDS-INFO. Note the fork caveat: Issues are DISABLED on `lllyys/everyone-can-use-english`; the file-* commands record `GH: n/a (issues disabled)` in that case.
+Skip mirroring entirely for DUPLICATE, WONT DO, and NEEDS-INFO. Note the fork caveat: Issues can be disabled on a fork (they are currently enabled); the file-* commands record `GH: n/a (issues disabled)` in that case.
 
 ## Output Format
 

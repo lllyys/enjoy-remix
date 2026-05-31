@@ -21,7 +21,7 @@ $ARGUMENTS
 
 2. **`gh` auth check**: `gh auth status`. If unauthenticated → print `gh CLI is not authenticated. Run \`gh auth login\` first.` and STOP.
 
-3. **Repo check**: `gh repo view --json nameWithOwner -q .nameWithOwner`. If it errors → print `Not inside a GitHub repo. \`gh repo set-default lllyys/everyone-can-use-english\` may help.` and STOP.
+3. **Repo check**: `gh repo view --json nameWithOwner -q .nameWithOwner`. If it errors → print `Not inside a GitHub repo. \`gh repo set-default lllyys/enjoy-remix\` may help.` and STOP.
 
 4. **Row lookup**: `grep -n "^| *<id> *|" docs/features.md | head -1`. If empty → print `Feature #<id> not found in docs/features.md` and STOP.
 
@@ -68,8 +68,8 @@ gh issue create --title "<title>" --label "<labels>" --body "<body>"
 ```
 
 Capture URL + extract issue number. Failure-mode handling mirrors `/file-bug`:
-- **Issues disabled (fork caveat)**: this repo is the FORK `lllyys/everyone-can-use-english`, and forks often have Issues DISABLED. If `gh` reports Issues are disabled, **stamp `GH: n/a (issues disabled)` into the row's Notes** (Phase 3 mechanics) so the mirror reminder is satisfied, and print:
-  `GitHub Issues are DISABLED on this fork — recorded "GH: n/a (issues disabled)" on feature #<id>. To mirror for real, enable Issues (Settings → General → Features → Issues: https://github.com/lllyys/everyone-can-use-english/settings) and re-run /file-feature <id>.`
+- **Issues disabled (fork caveat)**: this repo is the FORK `lllyys/enjoy-remix`, and forks can have Issues disabled (currently ENABLED on `lllyys/enjoy-remix`). If `gh` reports Issues are disabled, **stamp `GH: n/a (issues disabled)` into the row's Notes** (Phase 3 mechanics) so the mirror reminder is satisfied, and print:
+  `GitHub Issues are DISABLED on this fork — recorded "GH: n/a (issues disabled)" on feature #<id>. To mirror for real, enable Issues (Settings → General → Features → Issues: https://github.com/lllyys/enjoy-remix/settings) and re-run /file-feature <id>.`
   Then STOP.
 - Network failure → retry once after 3s.
 - Rate limit / label-missing / duplicate → handle as in `/file-bug`.

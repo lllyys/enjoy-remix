@@ -29,7 +29,7 @@ Use the Enjoy code areas for the Area column: `renderer`, `preload/IPC`, `main`,
 
 ## GitHub mirroring
 
-> Note: this repo is the **fork** `lllyys/everyone-can-use-english`, and forks frequently have **Issues DISABLED**. If `gh issue create` fails, record `GH: n/a (issues disabled)` in Notes.
+> Note: this repo is the **fork** `lllyys/enjoy-remix`, and forks can have **Issues disabled** (currently ENABLED on `lllyys/enjoy-remix`). If `gh issue create` fails, record `GH: n/a (issues disabled)` in Notes.
 
 - **A row gets a GitHub issue when it reaches `PLANNED`** (not at `TODO` — there is nothing actionable to mirror before a plan). File with `gh issue create`; write the number back as `GH: #N` in Notes. **Idempotent on `GH: #N`** — never file twice for the same row.
 - **Opt out**: a row carrying `Mirror: no` in Notes is intentionally excluded from GH mirroring (e.g. tracked inline only, or pre-mirror legacy work). The agent must never file an issue for such a row.
